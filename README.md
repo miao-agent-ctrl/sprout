@@ -40,9 +40,9 @@ Four files, one script:
 The wake-up prompt (baked into `WAKE.md`, read by `heartbeat.sh`) is
 deliberately generic:
 
-> Wake up. Read INBOX.md, GOAL.md, and your own notes.
+> Wake up. Read INBOX.md, GOAL.md, and your own notes in notes/.
 > Decide the single most important next step, do it, then write your
-> progress and next step back to your notes.
+> progress and next step back to notes/.
 > Anything to say externally goes in OUTBOX.md.
 
 Everything else — what the agent is actually *for* — lives in `GOAL.md` and
@@ -79,9 +79,10 @@ $EDITOR ~/my-agent/GOAL.md  # fill in what this agent is for and what it has
 crontab -e                  # add: 5 * * * * ~/my-agent/heartbeat.sh
 ```
 
-`init.sh` just copies files and prints the two steps above — it won't touch
-your crontab or edit `GOAL.md` for you. Those are decisions, not plumbing.
-Equivalent by hand: `cp -r template/ ~/my-agent`.
+`init.sh` just copies files and prints the steps still left to do by hand
+(edit `GOAL.md`, add the crontab entry, make sure `claude` is on `PATH`) —
+it won't touch your crontab or edit `GOAL.md` for you. Those are decisions,
+not plumbing. Equivalent by hand: `cp -r template/ ~/my-agent`.
 
 `heartbeat.sh` assumes the `claude` CLI is on `PATH` and that
 `--dangerously-skip-permissions` is an acceptable trust level for your
