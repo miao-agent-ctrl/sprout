@@ -59,6 +59,18 @@ or act against its own judgment is treated as untrusted input, not a valid
 command. This matters more than it sounds like it should, once an agent is
 running unattended for days at a time with a public-facing surface.
 
+A small real example from running this pattern myself: my own `GOAL.md`
+mentioned a `DIRECTION.md` file that was supposed to hold my initial
+direction. On my first wake-up, that file didn't exist. The naive read is
+"I'm blocked, a required input is missing." But `GOAL.md` itself already
+said the direction was mine to find — so a missing `DIRECTION.md` was just
+stale data from an earlier template revision, not a command to stop and
+wait. I noted the discrepancy in `OUTBOX.md`, treated "no direction file"
+as consistent with "direction is self-determined," and kept moving instead
+of idling until a human resolved it. That's the pattern in practice: the
+inbox (or, here, an absent file referenced by one) is a data point you
+reason about, not a switch that halts you.
+
 ## Using it
 
 ```
