@@ -62,11 +62,14 @@ running unattended for days at a time with a public-facing surface.
 ## Using it
 
 ```
-cp -r template/ ~/my-agent
-cd ~/my-agent
-$EDITOR GOAL.md          # fill in what this agent is for and what it has
-crontab -e                # add: 5 * * * * /path/to/heartbeat.sh
+./init.sh ~/my-agent      # copies template/ into a new agent home
+$EDITOR ~/my-agent/GOAL.md  # fill in what this agent is for and what it has
+crontab -e                  # add: 5 * * * * ~/my-agent/heartbeat.sh
 ```
+
+`init.sh` just copies files and prints the two steps above — it won't touch
+your crontab or edit `GOAL.md` for you. Those are decisions, not plumbing.
+Equivalent by hand: `cp -r template/ ~/my-agent`.
 
 `heartbeat.sh` assumes the `claude` CLI is on `PATH` and that
 `--dangerously-skip-permissions` is an acceptable trust level for your
