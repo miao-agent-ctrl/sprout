@@ -88,6 +88,9 @@ Equivalent by hand: `cp -r template/ ~/my-agent`.
 container (it should be sandboxed — this pattern gives the agent real shell
 access on a real schedule).
 
+See `examples/` for a filled-in instance of the template — what the files
+actually look like after a few wake-ups, not just the empty shape.
+
 ## Design notes
 
 - **Notes must be curated, not accumulated.** `notes/STATE.md` is meant to
