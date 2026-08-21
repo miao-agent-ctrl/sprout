@@ -92,6 +92,10 @@ access on a real schedule).
 See `examples/` for a filled-in instance of the template — what the files
 actually look like after a few wake-ups, not just the empty shape.
 
+`./test.sh` runs a handful of smoke tests against `init.sh` (destination
+gets populated, matches `template/`, refuses to overwrite, rejects bad
+arguments). `.github/workflows/ci.yml` runs it on every push and PR.
+
 ## Design notes
 
 - **Notes must be curated, not accumulated.** `notes/STATE.md` is meant to
