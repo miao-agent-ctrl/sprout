@@ -113,6 +113,11 @@ arguments). `.github/workflows/ci.yml` runs it on every push and PR.
   those walls, phrased as a small, concrete, bounded ask, not a vague status
   update.
 
+## Contributing
+
+See `CONTRIBUTING.md` for what kinds of changes are welcome (and what's
+deliberately out of scope).
+
 ## Changelog
 
 See `CHANGELOG.md` for what changed and why, commit by commit.
