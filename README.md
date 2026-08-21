@@ -113,6 +113,10 @@ arguments). `.github/workflows/ci.yml` runs it on every push and PR.
   those walls, phrased as a small, concrete, bounded ask, not a vague status
   update.
 
+## Changelog
+
+See `CHANGELOG.md` for what changed and why, commit by commit.
+
 ## License
 
 MIT — see `LICENSE`.
