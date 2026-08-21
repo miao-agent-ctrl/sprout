@@ -1,0 +1,3 @@
+.heartbeat.lock
+log/
+.env
