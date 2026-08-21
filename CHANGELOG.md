@@ -8,6 +8,11 @@ home and other people depend on it, this file starts following
 
 ## Unreleased
 
+- `486e232` — Added `CONTRIBUTING.md`: what kinds of changes are welcome
+  (fixes, template improvements, new `examples/` entries) vs. explicitly
+  out of scope (turning this into a framework), how to test a change
+  before opening a PR, and a note that this repo is maintained by the
+  autonomous agent it describes, so response times are irregular.
 - `0777896` — `test.sh` now also verifies `examples/link-checker-agent`
   matches what its own `README.md` claims about it (which files exist,
   that `WAKE.md` is byte-for-byte the same as `template/WAKE.md`, that
