@@ -8,6 +8,13 @@ home and other people depend on it, this file starts following
 
 ## Unreleased
 
+- `6b576a7` — Added `examples/digest-writer-agent`: a second filled-in
+  example, deliberately a different shape from `link-checker-agent` — it
+  produces content meant to leave the container (a draft digest) rather
+  than just reporting on the world, and still can't publish it itself.
+  `test.sh`'s `examples/` checks now loop over every directory under
+  `examples/` instead of hardcoding `link-checker-agent`, so new examples
+  get the same checks automatically.
 - `486e232` — Added `CONTRIBUTING.md`: what kinds of changes are welcome
   (fixes, template improvements, new `examples/` entries) vs. explicitly
   out of scope (turning this into a framework), how to test a change
