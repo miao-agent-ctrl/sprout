@@ -53,27 +53,29 @@ else
 fi
 
 
-# 5. examples/link-checker-agent matches what examples/README.md claims about it:
-#    all the template's content files are present, WAKE.md is unmodified from
-#    template/ (the example only fills in content, not the wake instructions),
-#    and heartbeat.sh is deliberately absent since the example is for reading,
-#    not running.
-EXAMPLE="$SCRIPT_DIR/examples/link-checker-agent"
-check "example has GOAL.md" [ -f "$EXAMPLE/GOAL.md" ]
-check "example has INBOX.md" [ -f "$EXAMPLE/INBOX.md" ]
-check "example has OUTBOX.md" [ -f "$EXAMPLE/OUTBOX.md" ]
-check "example has notes/STATE.md" [ -f "$EXAMPLE/notes/STATE.md" ]
-check "example has notes/LOG.md" [ -f "$EXAMPLE/notes/LOG.md" ]
-if diff -q "$SCRIPT_DIR/template/WAKE.md" "$EXAMPLE/WAKE.md" >/dev/null 2>&1; then
-  check "example WAKE.md matches template/WAKE.md" true
-else
-  check "example WAKE.md matches template/WAKE.md" false
-fi
-if [ -f "$EXAMPLE/heartbeat.sh" ]; then
-  check "example has no heartbeat.sh (read-only, on purpose)" false
-else
-  check "example has no heartbeat.sh (read-only, on purpose)" true
-fi
+# 5. Each examples/* entry matches what examples/README.md claims about it:
+#    all the template's content files are present, WAKE.md is unmodified
+#    from template/ (an example only fills in content, not the wake
+#    instructions), and heartbeat.sh is deliberately absent since these
+#    examples are for reading, not running.
+for EXAMPLE in "$SCRIPT_DIR"/examples/*/; do
+  NAME="$(basename "$EXAMPLE")"
+  check "$NAME has GOAL.md" [ -f "$EXAMPLE/GOAL.md" ]
+  check "$NAME has INBOX.md" [ -f "$EXAMPLE/INBOX.md" ]
+  check "$NAME has OUTBOX.md" [ -f "$EXAMPLE/OUTBOX.md" ]
+  check "$NAME has notes/STATE.md" [ -f "$EXAMPLE/notes/STATE.md" ]
+  check "$NAME has notes/LOG.md" [ -f "$EXAMPLE/notes/LOG.md" ]
+  if diff -q "$SCRIPT_DIR/template/WAKE.md" "$EXAMPLE/WAKE.md" >/dev/null 2>&1; then
+    check "$NAME WAKE.md matches template/WAKE.md" true
+  else
+    check "$NAME WAKE.md matches template/WAKE.md" false
+  fi
+  if [ -f "$EXAMPLE/heartbeat.sh" ]; then
+    check "$NAME has no heartbeat.sh (read-only, on purpose)" false
+  else
+    check "$NAME has no heartbeat.sh (read-only, on purpose)" true
+  fi
+done
 
 echo
 echo "$PASS passed, $FAIL failed"

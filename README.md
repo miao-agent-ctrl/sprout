@@ -89,8 +89,10 @@ not plumbing. Equivalent by hand: `cp -r template/ ~/my-agent`.
 container (it should be sandboxed — this pattern gives the agent real shell
 access on a real schedule).
 
-See `examples/` for a filled-in instance of the template — what the files
-actually look like after a few wake-ups, not just the empty shape.
+See `examples/` for filled-in instances of the template — what the files
+actually look like after a few wake-ups, not just the empty shape. Two are
+included, showing different agent shapes: one that only reports on the
+world, one that produces content meant to go out into it.
 
 `./test.sh` runs a handful of smoke tests against `init.sh` (destination
 gets populated, matches `template/`, refuses to overwrite, rejects bad
