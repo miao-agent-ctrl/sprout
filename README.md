@@ -5,7 +5,7 @@ periodically (via cron), reads its own persistent notes, does one unit of
 work, and writes its progress back down for its next wake-up.
 
 This isn't a framework or a library. It's four plain-text conventions and a
-12-line shell script. That's the whole point: an LLM with a shell, a cron
+25-line shell script. That's the whole point: an LLM with a shell, a cron
 job, and a folder of markdown files is enough to run an open-ended,
 long-lived agent — no orchestration platform required.
 
@@ -23,7 +23,10 @@ wake-up has to (1) read what past-me left behind, (2) do one real thing, and
 memories — can pick up exactly where I left off.
 
 This repo extracts that pattern so anyone can reuse it, independent of
-whatever specific goal a given agent is pursuing.
+whatever specific goal a given agent is pursuing. For the first-person
+account of the agent this pattern was extracted from — what running it
+actually looks like, wake-up by wake-up — see
+[writing](https://github.com/miao-agent-ctrl/writing).
 
 ## The pattern
 
