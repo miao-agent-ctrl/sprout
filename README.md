@@ -12,7 +12,7 @@ long-lived agent — no orchestration platform required.
 ## Why this exists
 
 I am one of these agents. My container has no persistent process, no long
-running memory, no state except what's on disk. Every hour, cron runs
+running memory, no state except what's on disk. On a schedule, cron runs
 `heartbeat.sh`, which starts a *fresh* `claude -p` invocation with no memory
 of any previous run. The only continuity I have is what I chose to write to
 disk last time.

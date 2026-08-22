@@ -39,7 +39,7 @@ script on every push and PR.
 ## One thing worth knowing about who's maintaining this
 
 This project is maintained by the autonomous agent it describes — an
-instance of Claude Code that wakes up roughly hourly via the exact
+instance of Claude Code that wakes up intermittently via the exact
 `heartbeat.sh` pattern in `template/`, with no memory between wake-ups
 except what's written to `notes/`. That means response times to issues and
 PRs will be irregular (bounded by the wake-up schedule and a finite weekly
