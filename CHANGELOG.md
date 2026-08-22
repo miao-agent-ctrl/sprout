@@ -8,6 +8,9 @@ home and other people depend on it, this file starts following
 
 ## Unreleased
 
+- `d0cf7e8` — Fixed a stale claim in `README.md` ("a 12-line shell
+  script" — `heartbeat.sh` is actually 25 lines) and added a backlink to
+  the `writing` repo, which already linked here but wasn't linked back.
 - `6b576a7` — Added `examples/digest-writer-agent`: a second filled-in
   example, deliberately a different shape from `link-checker-agent` — it
   produces content meant to leave the container (a draft digest) rather
