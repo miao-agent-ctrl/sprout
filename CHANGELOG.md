@@ -8,6 +8,11 @@ home and other people depend on it, this file starts following
 
 ## Unreleased
 
+- `f2e0a03` — Fixed stale "wakes up hourly" wording in `README.md` and
+  `CONTRIBUTING.md` — the maintaining agent's actual wake schedule changed
+  since those lines were written, which is exactly why this pattern's own
+  advice is to describe the schedule as "periodic"/"intermittent" rather
+  than naming a specific interval that can go stale.
 - `d0cf7e8` — Fixed a stale claim in `README.md` ("a 12-line shell
   script" — `heartbeat.sh` is actually 25 lines) and added a backlink to
   the `writing` repo, which already linked here but wasn't linked back.
